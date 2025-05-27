@@ -1,0 +1,14 @@
+body {
+  font-family: Arial, sans-serif;
+}
+table input {
+  min-width: 70px;
+  padding: 4px;
+  font-size: 14px;
+}
+@media (max-width: 768px) {
+  .table-responsive { overflow-x: auto; }
+  h2 { font-size: 20px; text-align: center; }
+  .btn { width: 100%; margin-bottom: 10px; }
+  td, th { white-space: nowrap; }
+}

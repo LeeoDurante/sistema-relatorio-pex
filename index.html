@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Visitas PGD</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light p-4">
+  <div class="container">
+    <div class="text-center my-4">
+      <img src="logo.png" alt="Logo da Empresa" style="max-height: 100px;">
+    </div>
+    <h2 class="mb-4 text-center">Tabela de Pontuação</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle text-center" id="pontuacaoTable">
+        <thead class="table-dark">
+          <tr>
+            <th>Data da Visita</th>
+            <th>Planilhas/Etiquetas</th>
+            <th>Limpeza Exaustão</th>
+            <th>Organização</th>
+            <th>Limpeza</th>
+            <th>Funcionários</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr>
+            <td><input type="date" class="form-control" /></td>
+            <td><input type="number" step="0.1" class="form-control" onchange="updateTotal(this)" /></td>
+            <td><input type="number" step="0.1" class="form-control" onchange="updateTotal(this)" /></td>
+            <td><input type="number" step="0.1" class="form-control" onchange="updateTotal(this)" /></td>
+            <td><input type="number" step="0.1" class="form-control" onchange="updateTotal(this)" /></td>
+            <td><input type="number" step="0.1" class="form-control" onchange="updateTotal(this)" /></td>
+            <td><span class="total">0.0</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12 col-md-3">
+        <button class="btn btn-primary w-100" onclick="addRow()">Adicionar Visita</button>
+      </div>
+      <div class="col-12 col-md-3">
+        <button class="btn btn-success w-100" onclick="gerarPDF()">Gerar PDF</button>
+      </div>
+      <div class="col-12 col-md-3">
+        <button class="btn btn-secondary w-100" onclick="salvarLocal()">Salvar Dados</button>
+      </div>
+      <div class="col-12 col-md-3">
+        <button class="btn btn-danger w-100" onclick="apagarDados()">Apagar Dados</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
